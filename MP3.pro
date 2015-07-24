@@ -20,3 +20,5 @@ HEADERS += inc/about.h \
     inc/mainwindow.h \
     inc/option.h \
     inc/stylesheet.h
+
+RC_FILE += res.rc
