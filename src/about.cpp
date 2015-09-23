@@ -24,11 +24,11 @@ AboutWindow::AboutWindow()
     about_label = new QLabel(this);
     about_label->setGeometry(10,10,280,130);
     about_label->setText    ("Odtwarzacz plikow MP3.\n"
-                             "Napisany aby nauczyc sie Qt.\n\n"
+                             "https://github.com/daniel2042/MP3-Player.git\n\n"
 
                              "Autor:    Daniel Majchrzycki\n"
                              "Data:     Maj.2015\n"
-                             "Wersja:  1.0\n"
+                             "Wersja:  1.1\n"
                              "QT:        5.4.1\n"
                              "Deployment: -");
 

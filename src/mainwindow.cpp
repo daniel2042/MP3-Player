@@ -98,7 +98,7 @@ MainWindow::MainWindow()
     volume_slider = new QSlider(Qt::Horizontal,this);
     volume_slider->setMinimum(0);
     volume_slider->setMaximum(100);
-    volume_slider->setValue(10);
+    volume_slider->setValue(50);
     volume_slider->setGeometry(300,80,90,20);
 
     time_slider = new QSlider(Qt::Horizontal,this);  // Slider czasowy
@@ -115,6 +115,7 @@ MainWindow::MainWindow()
     random_checkbox = new QCheckBox(this);
     random_checkbox->setGeometry(10,80,70,20);
     random_checkbox->setText("Random");
+    random_checkbox->setChecked(true);
 
     playlist_checkbox = new QCheckBox(this);
     playlist_checkbox->setGeometry(10,100,70,20);
@@ -172,6 +173,13 @@ MainWindow::MainWindow()
     Reload_Songs();
     Create_Menu();
     Player_Init();
+    Random_Songs();
+    QString name = sort_model->index(song_queue[song_id],0).data(Qt::DisplayRole).toString();
+    name.chop(4);
+    Load_Song(name);
+    song_name->setText(name);
+    Update_Song_Label();
+    Play_Pressed();
 
 
     connect(qApp                  , SIGNAL(aboutToQuit())                                   ,this,       SLOT(About_To_Quit()));
